@@ -1,7 +1,9 @@
 import sublime, sublime_plugin
+import os as os
 import xml.etree.ElementTree as et
 
-tree = et.parse('opcodes.xml')
+wd = os.path.dirname(os.path.abspath(__file__))
+tree = et.parse('%s/opcodes.xml' % wd)
 root = tree.getroot()
 
 def search(term):
